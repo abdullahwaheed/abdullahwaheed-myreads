@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ROUTES } from './contants';
+import { ROUTES } from '../constants';
 
 function MyReads() {
   return (

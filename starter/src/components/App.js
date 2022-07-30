@@ -1,9 +1,9 @@
-import "./App.css";
+import "../App.css";
 import { Routes, Route } from "react-router-dom";
 
 import MyReads from './MyReads';
 import SearchLibrary from './SearchLibrary';
-import { ROUTES } from './contants';
+import { ROUTES } from '../constants';
 
 function App() {
 
