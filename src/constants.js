@@ -23,7 +23,7 @@ export const BOOK_SHELF = [
 export const SHELF_CHANGER = [
     {
         name: 'Move to...',
-        identifier: 'none',
+        identifier: '',
         disabled: true,
     },
     ...BOOK_SHELF,
@@ -36,9 +36,6 @@ export const SHELF_CHANGER = [
 export const BOOK_SHAPE = {
     id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
-    authors: PropTypes.arrayOf(PropTypes.string).isRequired,
-    imageLinks: PropTypes.objectOf(PropTypes.shape({
-        smallThumbnail: PropTypes.string.isRequired,
-        thumbnail: PropTypes.string.isRequired,
-    })).isRequired,
+    authors: PropTypes.arrayOf(PropTypes.string),
+    imageLinks: PropTypes.object,
 };

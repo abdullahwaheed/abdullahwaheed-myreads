@@ -8,7 +8,7 @@ import Shelf from './Shelf';
 function MyReads() {
   const [books, setBooks] = useState([]);
 
-  const fetchBooks = () => BooksAPI.getAll().then(books => setBooks(books));
+  const fetchBooks = () => BooksAPI.getAll().then(responseBooks => setBooks(responseBooks));
 
   useEffect(() => {
     fetchBooks();

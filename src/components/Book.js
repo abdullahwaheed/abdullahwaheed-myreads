@@ -14,7 +14,7 @@ function Book({ book, fetchBooks, shelf }) {
                     width: 128,
                     height: 193,
                     backgroundImage:
-                        `url("${imageLinks.smallThumbnail}")`,
+                        `url("${imageLinks?.smallThumbnail}")`,
                     }}
                 />
                 <ShelfChanger
@@ -24,17 +24,22 @@ function Book({ book, fetchBooks, shelf }) {
                 />
             </div>
             <div className="book-title">{title}</div>
-            <div className="book-authors">{authors.join(', ')}</div>
+            <div className="book-authors">{authors && authors.join(', ')}</div>
         </div>
     );
 }
 
 Book.propTypes = {
-    fetchBooks: PropTypes.func.isRequired,
+    fetchBooks: PropTypes.func,
 
     book: PropTypes.shape(BOOK_SHAPE).isRequired,
 
-    shelf: PropTypes.string.isRequired,
-}
+    shelf: PropTypes.string,
+};
+
+Book.defaultProps = {
+    fetchBooks: () => {},
+    shelf: 'none'
+};
 
 export default Book;

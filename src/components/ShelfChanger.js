@@ -30,7 +30,11 @@ ShelfChanger.propTypes = {
 
     book: PropTypes.shape(BOOK_SHAPE).isRequired,
 
-    shelf: PropTypes.string.isRequired,
+    shelf: PropTypes.string,
+};
+
+ShelfChanger.defaultProps = {
+    shelf: 'none'
 };
 
 export default ShelfChanger;
