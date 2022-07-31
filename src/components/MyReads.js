@@ -1,7 +1,15 @@
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 import { ROUTES } from '../constants';
+import * as BooksAPI from '../BooksAPI';
 
 function MyReads() {
+  // useEffect(async () => {
+  //   console.log(await BooksAPI.getAll());
+  // });
+  useEffect(() => {
+    BooksAPI.getAll().then(books => console.log(books));
+  });
   return (
       <div className="list-books">
         <div className="list-books-title">
