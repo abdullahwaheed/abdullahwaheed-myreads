@@ -1,43 +1,40 @@
 import PropTypes from 'prop-types';
 
 import { BOOK_SHAPE } from '../constants';
-function Book({ book }) {
+import ShelfChanger from './ShelfChanger';
+
+function Book({ book, fetchBooks, shelf }) {
     const { title, authors, imageLinks } = book;
-    
     return (
-    <div className="book">
-        <div className="book-top">
-        <div
-            className="book-cover"
-            style={{
-            width: 128,
-            height: 193,
-            backgroundImage:
-                `url("${imageLinks.smallThumbnail}")`,
-            }}
-        ></div>
-        <div className="book-shelf-changer">
-            <select>
-            <option value="none" disabled>
-                Move to...
-            </option>
-            <option value="currentlyReading">
-                Currently Reading
-            </option>
-            <option value="wantToRead">Want to Read</option>
-            <option value="read">Read</option>
-            <option value="none">None</option>
-            </select>
+        <div className="book">
+            <div className="book-top">
+                <div
+                    className="book-cover"
+                    style={{
+                    width: 128,
+                    height: 193,
+                    backgroundImage:
+                        `url("${imageLinks.smallThumbnail}")`,
+                    }}
+                />
+                <ShelfChanger
+                    book={book}
+                    fetchBooks={fetchBooks}
+                    shelf={shelf}
+                />
+            </div>
+            <div className="book-title">{title}</div>
+            <div className="book-authors">{authors.join(', ')}</div>
         </div>
-        </div>
-        <div className="book-title">{title}</div>
-        <div className="book-authors">{authors.join(', ')}</div>
-    </div>
-  );
+    );
 }
 
 Book.propTypes = {
-    book: PropTypes.shape(BOOK_SHAPE),
+    fetchBooks: PropTypes.func.isRequired,
+
+    book: PropTypes.shape(BOOK_SHAPE).isRequired,
+
+    shelf: PropTypes.string.isRequired,
 }
 
 export default Book;

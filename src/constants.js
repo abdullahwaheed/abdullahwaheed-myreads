@@ -18,14 +18,27 @@ export const BOOK_SHELF = [
         name: 'Read',
         identifier: 'read',
     },
-]
+];
+
+export const SHELF_CHANGER = [
+    {
+        name: 'Move to...',
+        identifier: 'none',
+        disabled: true,
+    },
+    ...BOOK_SHELF,
+    {
+        name: 'None',
+        identifier: 'none',
+    }
+];
 
 export const BOOK_SHAPE = {
     id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     authors: PropTypes.arrayOf(PropTypes.string).isRequired,
     imageLinks: PropTypes.objectOf(PropTypes.shape({
-        smallThumbnail: PropTypes.string,
-        thumbnail: PropTypes.string,
+        smallThumbnail: PropTypes.string.isRequired,
+        thumbnail: PropTypes.string.isRequired,
     })).isRequired,
 };

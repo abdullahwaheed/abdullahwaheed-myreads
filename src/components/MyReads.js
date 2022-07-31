@@ -12,7 +12,7 @@ function MyReads() {
 
   useEffect(() => {
     fetchBooks();
-  });
+  }, []);
   return (
       <div className="list-books">
         <div className="list-books-title">
@@ -26,6 +26,7 @@ function MyReads() {
               key={shelf.identifier}
               identifier={shelf.identifier}
               books={books}
+              fetchBooks={fetchBooks}
             />
           ))}
           </div>
