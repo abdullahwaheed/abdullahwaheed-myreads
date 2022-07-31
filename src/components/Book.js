@@ -1,7 +1,10 @@
 import PropTypes from 'prop-types';
 
-function Book({ title, author, image }) {
-  return (
+import { BOOK_SHAPE } from '../constants';
+function Book({ book }) {
+    const { title, authors, imageLinks } = book;
+    
+    return (
     <div className="book">
         <div className="book-top">
         <div
@@ -10,7 +13,7 @@ function Book({ title, author, image }) {
             width: 128,
             height: 193,
             backgroundImage:
-                `url("${image}")`,
+                `url("${imageLinks.smallThumbnail}")`,
             }}
         ></div>
         <div className="book-shelf-changer">
@@ -28,17 +31,13 @@ function Book({ title, author, image }) {
         </div>
         </div>
         <div className="book-title">{title}</div>
-        <div className="book-authors">{author}</div>
+        <div className="book-authors">{authors.join(', ')}</div>
     </div>
   );
 }
 
 Book.propTypes = {
-    id: PropTypes.number.isRequired,
-
-    title: PropTypes.string.isRequired,
-    author: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired,
+    book: PropTypes.shape(BOOK_SHAPE),
 }
 
 export default Book;
