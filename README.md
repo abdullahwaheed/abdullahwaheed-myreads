@@ -39,7 +39,7 @@ To get started developing right away:
 ## Routing
 
 MyReads page is at [`MyReads`](http://localhost:3000/)
-Search page is at [`Search`](http://localhost:3000/)
+Search page is at [`Search`](http://localhost:3000/search)
 
 
 ## Backend Server
