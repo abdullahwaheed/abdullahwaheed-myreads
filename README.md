@@ -16,13 +16,13 @@ To get started developing right away:
 │   ├── favicon.ico # React Icon, You may change if you wish.
 │   └── index.html # DO NOT MODIFY
 └── src
-    |── Components
-    |   |── App.js # This is the root of your app. Contains routing of the app.
-    |   |── Book.js # Renders book component of the app.
-    |   |── MyReads.js # Renders my reads component which has book shelves and respective books.
-    |   |── SearchLibrary.js # Renders SearchLibrary component which searches books based on query.
-    |   |── Shelf.js # Renders Shelf component which renders respective books.
-    |   |── ShelfChanger.js # Renders ShelfCHanger selections.
+    │── Components
+    │   │── App.js # This is the root of your app. Contains routing of the app.
+    │   │── Book.js # Renders book component of the app.
+    │   │── MyReads.js # Renders my reads component which has book shelves and respective books.
+    │   │── SearchLibrary.js # Renders SearchLibrary component which searches books based on query.
+    │   │── Shelf.js # Renders Shelf component which renders respective books.
+    │   │── ShelfChanger.js # Renders ShelfCHanger selections.
     ├── App.css # Styles for your app. Feel free to customize this as you desire.
     ├── App.test.js # Used for testing. Provided with Create React App. Testing is encouraged, but not required.
     ├── BooksAPI.js # A JavaScript API for the provided Udacity backend. Instructions for the methods are below.
@@ -32,9 +32,15 @@ To get started developing right away:
     │   └── arrow-drop-down.svg
     ├── constansts.js # constants of the app
     ├── index.css # Global styles. You probably won't need to change anything here.
-    └── index.js # You should not need to modify this file. It is used for DOM rendering only.
-    └── .gitignore # Igrnores useless files for git tracking.
+    │── index.js # You should not need to modify this file. It is used for DOM rendering only.
+    │── .gitignore # Igrnores useless files for git tracking.
 ```
+
+## Routing
+
+MyReads page is at [`MyReads`](http://localhost:3000/)
+Search page is at [`Search`](http://localhost:3000/)
+
 
 ## Backend Server
 
